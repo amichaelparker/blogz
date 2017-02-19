@@ -167,7 +167,7 @@ class ViewPostHandler(BlogHandler):
 class SignupHandler(BlogHandler):
 
     def validate_username(self, username):
-        USER_RE = re.compile(r"^[a-zA-Z0-9_-]{3,20}$")
+        USER_RE = re.compile(r"^(?=.*[a-zA-Z])[a-zA-Z0-9_-]{3,20}.+$")
         if USER_RE.match(username):
             return username
         else:
